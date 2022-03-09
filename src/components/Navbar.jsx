@@ -10,7 +10,7 @@ import React from "react";
 function NavbarComponent() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
-      <Container fluid>
+      <Container>
         <Navbar.Brand href="#">GreenHome</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
