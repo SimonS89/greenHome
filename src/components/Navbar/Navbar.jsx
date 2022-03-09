@@ -6,12 +6,21 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import React from "react";
+import Logo from "../../assets/img/GreenHome-logos_white.png";
 
-function NavbarComponent() {
+const NavbarComponent = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand href="#">GreenHome</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <img
+            alt="Logo green home"
+            src={Logo}
+            width="230"
+            height="40"
+            className="d-inline align-top"
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -51,6 +60,6 @@ function NavbarComponent() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavbarComponent;
