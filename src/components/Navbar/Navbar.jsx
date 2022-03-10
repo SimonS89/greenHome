@@ -7,12 +7,14 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import React from "react";
 import Logo from "../../assets/img/GreenHome-logos_white.png";
+import CartWidget from "../CartWidget/CartWidget";
 
 const NavbarComponent = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="#home">
+          <CartWidget />
           <img
             alt="Logo green home"
             src={Logo}
@@ -43,9 +45,6 @@ const NavbarComponent = () => {
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Contacto
-            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <FormControl
