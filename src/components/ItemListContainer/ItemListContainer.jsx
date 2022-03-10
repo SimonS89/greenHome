@@ -4,7 +4,7 @@ const ItemListContainer = ({ persona }) => {
   return (
     <div>
       <h2>
-        Hola {persona.nombre} {persona.apellido}{" "}
+        Hola {persona.nombre} {persona.apellido}
       </h2>
     </div>
   );
