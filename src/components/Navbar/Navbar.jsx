@@ -1,13 +1,16 @@
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Button from "react-bootstrap/Button";
 import React from "react";
 import Logo from "../../assets/img/GreenHome-logos_white.png";
 import CartWidget from "../CartWidget/CartWidget";
+
+import {
+  Navbar,
+  Container,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+  NavDropdown,
+} from "react-bootstrap";
 
 const NavbarComponent = () => {
   return (
