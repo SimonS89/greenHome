@@ -1,9 +1,8 @@
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavBoots } from "./components/Bootstrap/NavBoots";
+import { NavBoots } from "./components/Navbar/Navbar";
 
 const persona = {
   nombre: "Juanito",
@@ -13,9 +12,10 @@ const persona = {
 function App() {
   return (
     <div>
-      <Navbar />
-      <ItemListContainer persona={persona} />
       <NavBoots />
+      <main>
+        <ItemListContainer persona={persona} />
+      </main>
     </div>
   );
 }

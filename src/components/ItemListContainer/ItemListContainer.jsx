@@ -2,7 +2,7 @@ import React from "react";
 
 const ItemListContainer = ({ persona }) => {
   return (
-    <div>
+    <div class="container">
       <h2>
         Hola {persona.nombre} {persona.apellido}
       </h2>

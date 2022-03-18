@@ -1,23 +1,12 @@
 import React from "react";
-import Logo from "../../assets/img/GreenHome-logos_white.png";
 import CartWidget from "../CartWidget/CartWidget";
+import Logo from "../../assets/img/GreenHome-logos_white.png";
 
-import {
-  Navbar,
-  Container,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  NavDropdown,
-} from "react-bootstrap";
-
-const NavbarComponent = () => {
+export const NavBoots = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">
-          <CartWidget />
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container">
+        <a className="navbar-brand" href="#">
           <img
             alt="Logo green home"
             src={Logo}
@@ -25,43 +14,84 @@ const NavbarComponent = () => {
             height="40"
             className="d-inline align-top"
           />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Quienes somos</Nav.Link>
-            <NavDropdown
-              title="Nuestros productos"
-              id="navbarScrollingDropdown"
-            >
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Form className="d-flex">
-            <FormControl
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">
+                <span>Home</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <span>Quienes somos</span>
+              </a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Nuestros productos
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Action
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Another action
+                  </a>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form className="d-flex">
+            <input
+              className="form-control me-2"
               type="search"
-              placeholder="Ingrese busqueda"
-              className="me-2"
+              placeholder="Search"
               aria-label="Search"
             />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+
+            <button className="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <li ClassName="nav-Cart">
+            <a href="#" ClassName="nav-cart">
+              <span>
+                <CartWidget />
+              </span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
   );
 };
-
-export default NavbarComponent;
