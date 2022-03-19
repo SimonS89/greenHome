@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemCounter = ({ initialValue, stock, onAdd }) => {
+const ItemCounter = ({ initialValue, stock }) => {
   const [counter, setCounter] = useState(initialValue);
 
   const sumar = () => {
@@ -15,7 +15,7 @@ const ItemCounter = ({ initialValue, stock, onAdd }) => {
     }
   };
 
-  const addCart = () => {
+  const onAdd = () => {
     alert(`ud ha seleccionado  ${counter} productos`);
   };
 
@@ -26,6 +26,7 @@ const ItemCounter = ({ initialValue, stock, onAdd }) => {
         type="button"
         className="btn btn-primary fw-bolder"
         onClick={restar}
+        disabled={counter === stock ? true : null}
       >
         {" "}
         -{" "}
@@ -35,7 +36,7 @@ const ItemCounter = ({ initialValue, stock, onAdd }) => {
         {" "}
         +{" "}
       </button>
-      <button className="d-block mt-2 fw-bolder btn btn-dark" onClick={addCart}>
+      <button className="d-block mt-2 fw-bolder btn btn-dark" onClick={onAdd}>
         Agregar al carrito
       </button>
     </div>

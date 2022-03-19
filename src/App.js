@@ -15,7 +15,7 @@ function App() {
       <Navbar />
       <main>
         <ItemListContainer persona={persona} />
-        <ItemCounter initialValue={1} stock={5} onAdd="Agregado al carrito" />
+        <ItemCounter initialValue={1} stock={5} />
       </main>
     </div>
   );
