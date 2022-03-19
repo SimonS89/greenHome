@@ -2,7 +2,7 @@ import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../assets/img/GreenHome-logos_white.png";
 
-export const NavBoots = () => {
+export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -71,7 +71,7 @@ export const NavBoots = () => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -82,7 +82,7 @@ export const NavBoots = () => {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
           <li ClassName="nav-Cart">
             <a href="#" ClassName="nav-cart">
               <span>
