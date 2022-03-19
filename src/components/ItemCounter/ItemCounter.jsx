@@ -16,7 +16,7 @@ const ItemCounter = ({ initialValue, stock, onAdd }) => {
   };
 
   const addCart = () => {
-    console.log(onAdd);
+    alert(`ud ha seleccionado  ${counter} productos`);
   };
 
   return (
