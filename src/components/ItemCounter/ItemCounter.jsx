@@ -16,7 +16,7 @@ const ItemCounter = ({ initialValue, stock }) => {
   };
 
   const onAdd = () => {
-    alert(`ud ha seleccionado  ${counter} productos`);
+    alert(`ud ha seleccionado ${counter} productos`);
   };
 
   return (
@@ -26,13 +26,18 @@ const ItemCounter = ({ initialValue, stock }) => {
         type="button"
         className="btn btn-primary fw-bolder"
         onClick={restar}
-        disabled={counter === stock ? true : null}
+        disabled={counter === 0 ? true : false}
       >
         {" "}
         -{" "}
       </button>
       <span>{counter}</span>
-      <button type="button" className="btn btn-primary" onClick={sumar}>
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={sumar}
+        disabled={counter === stock ? true : false}
+      >
         {" "}
         +{" "}
       </button>
