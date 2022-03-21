@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 const CartWidget = () => {
   return (
     <button>
-      <FaShoppingCart className="text-success" />
+      <FaShoppingCart className="text-dark" />
     </button>
   );
 };

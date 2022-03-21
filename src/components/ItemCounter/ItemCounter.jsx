@@ -20,30 +20,36 @@ const ItemCounter = ({ initialValue, stock }) => {
   };
 
   return (
-    <div className="container">
-      <p>Contador de productos</p>
-      <button
-        type="button"
-        className="btn btn-primary fw-bolder"
-        onClick={restar}
-        disabled={counter === 0 ? true : false}
-      >
-        {" "}
-        -{" "}
-      </button>
-      <span>{counter}</span>
-      <button
-        type="button"
-        className="btn btn-primary"
-        onClick={sumar}
-        disabled={counter === stock ? true : false}
-      >
-        {" "}
-        +{" "}
-      </button>
-      <button className="d-block mt-2 fw-bolder btn btn-dark" onClick={onAdd}>
-        Agregar al carrito
-      </button>
+    <div className="container mt-3 align-items-center">
+      <div className="col">
+        <button
+          type="button"
+          className="btn btn-outline-dark fw-bolder btn-lg me-3"
+          onClick={restar}
+          disabled={counter === 0 ? true : false}
+        >
+          {" "}
+          -{" "}
+        </button>
+        <span>{counter}</span>
+        <button
+          type="button"
+          className="btn btn-outline-dark btn-lg ms-3"
+          onClick={sumar}
+          disabled={counter === stock ? true : false}
+        >
+          {" "}
+          +{" "}
+        </button>
+      </div>
+      <div className="col">
+        <button
+          className=" mt-2 mb-4  fw-bolder btn btn-outline-dark"
+          onClick={onAdd}
+        >
+          Agregar al carrito
+        </button>
+      </div>
     </div>
   );
 };
