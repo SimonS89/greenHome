@@ -1,22 +1,19 @@
 import { React, useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
 
-const Item = ({ products }) => {
+const Item = ({ producto }) => {
+  const { id, title, price, pictureAlt, img, stock, detail } = producto;
   const [showMore, setShowMore] = useState(false);
   const hide = () => setShowMore(!showMore);
 
-  return products.map((product) => (
-    <div className="col" key={product.id}>
-      <div className="card text-center ">
-        <img
-          src={product.img}
-          className="card-img-top"
-          alt={product.pictureAlt}
-        />
+  return (
+    <div className="col" key={id}>
+      <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded">
+        <img src={img} className="card-img-top" alt={pictureAlt} />
         <div className="card-body">
-          <h5 className="card-title">{product.title}</h5>
-          <p className="card-text">$ {product.price}</p>
-          {showMore ? <p>{product.detail}</p> : ""}
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">$ {price}</p>
+          {showMore ? <p>{detail}</p> : ""}
           <button
             onClick={hide}
             type="button"
@@ -25,10 +22,10 @@ const Item = ({ products }) => {
             {showMore ? "Ver Menos" : "Ver detalles del producto"}
           </button>
         </div>
-        <ItemCounter initialValue={0} stock={product.stock} />
+        <ItemCounter initialValue={0} stock={stock} />
       </div>
     </div>
-  ));
+  );
 };
 
 export default Item;
