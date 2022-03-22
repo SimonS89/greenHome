@@ -20,7 +20,11 @@ const ItemList = () => {
 
   return (
     <div className="row row-cols-1 row-cols-md-3 g-4">
-      {loading ? <h2>cargando...</h2> : <Item products={products} />}
+      {loading ? (
+        <h2>Cargando productos disponibles...</h2>
+      ) : (
+        <Item products={products} />
+      )}
     </div>
   );
 };

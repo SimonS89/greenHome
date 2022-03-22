@@ -17,7 +17,11 @@ const Item = ({ products }) => {
             Ver detalle del producto
           </button>
         </div>
-        <ItemCounter className="align-self-center" initialValue={1} stock={5} />
+        <ItemCounter
+          className="align-self-center"
+          initialValue={1}
+          stock={product.stock}
+        />
       </div>
     </div>
   ));

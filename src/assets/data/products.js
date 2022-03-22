@@ -7,6 +7,7 @@ export const products = [
     price: 650,
     pictureAlt: "sansevieria",
     img: img1,
+    stock: 2,
   },
   {
     id: "2",
@@ -14,6 +15,7 @@ export const products = [
     price: 450,
     pictureAlt: "calathea",
     img: img1,
+    stock: 6,
   },
   {
     id: "3",
@@ -21,6 +23,7 @@ export const products = [
     price: 1250,
     pictureAlt: "peperomia nevada",
     img: img1,
+    stock: 4,
   },
   {
     id: "4",
@@ -28,6 +31,7 @@ export const products = [
     price: 1350,
     pictureAlt: "monstera",
     img: img1,
+    stock: 20,
   },
   {
     id: "5",
@@ -35,6 +39,7 @@ export const products = [
     price: 970,
     pictureAlt: "anthurium",
     img: img1,
+    stock: 10,
   },
   {
     id: "6",
@@ -42,5 +47,6 @@ export const products = [
     price: 1370,
     pictureAlt: "alocasia dragon",
     img: img1,
+    stock: 1,
   },
 ];
