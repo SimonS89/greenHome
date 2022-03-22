@@ -52,12 +52,12 @@ export const Navbar = () => {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
-                    Action
+                    Plantas de interior
                   </a>
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Another action
+                    Plantas de exterior
                   </a>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ export const Navbar = () => {
                 </li>
                 <li>
                   <a className="dropdown-item" href="#">
-                    Something else here
+                    Otros productos
                   </a>
                 </li>
               </ul>
