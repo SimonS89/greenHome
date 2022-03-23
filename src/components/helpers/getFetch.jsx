@@ -7,5 +7,5 @@ export const getFetch = new Promise(function (resolve, reject) {
     } else {
       reject("no hay productos");
     }
-  }, 3000);
+  }, 3700);
 });

@@ -1,6 +1,7 @@
 import { getFetch } from "../helpers/getFetch";
 import React, { useEffect, useState } from "react";
 import Item from "../Item/Item";
+import Spinner from "react-bootstrap/Spinner";
 
 const ItemList = () => {
   const [products, setProducts] = useState([]);
@@ -19,11 +20,12 @@ const ItemList = () => {
   }, []);
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4">
+    <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
       {loading ? (
-        <h2>Cargando productos disponibles...</h2>
+        <Spinner animation="grow" role="status" size="lg">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       ) : (
-        // <Item products={products} />
         products.map((producto) => <Item producto={producto} />)
       )}
     </div>
