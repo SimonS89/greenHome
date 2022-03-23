@@ -9,10 +9,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      <main>
-        <ItemListContainer />
-        <ItemDetailContainer />
-      </main>
+      <ItemListContainer />
+      <ItemDetailContainer />
     </div>
   );
 }

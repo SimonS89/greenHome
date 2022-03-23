@@ -17,8 +17,6 @@ const ItemDetailContainer = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  console.log(productDetail);
-
   return (
     <div>
       {loading ? (
