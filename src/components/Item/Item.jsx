@@ -17,7 +17,7 @@ const Item = ({ producto }) => {
           <button
             onClick={hide}
             type="button"
-            class="btn btn-outline-dark fw-bold"
+            className="btn btn-outline-dark fw-bold"
           >
             {showMore ? "Ver Menos" : "Ver detalles del producto"}
           </button>
