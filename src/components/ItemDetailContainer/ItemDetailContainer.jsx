@@ -3,6 +3,7 @@ import { getFetch } from "../helpers/getFetch";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Spinner from "react-bootstrap/Spinner";
 
+
 const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState({});
   const [loading, setLoading] = useState(false);
@@ -18,13 +19,13 @@ const ItemDetailContainer = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-5">
       {loading ? (
         <Spinner animation="grow" role="status" size="lg">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       ) : (
-        <ItemDetail productDetail={productDetail} />
+          <ItemDetail productDetail={productDetail} />
       )}
     </div>
   );

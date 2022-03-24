@@ -26,7 +26,9 @@ const ItemList = () => {
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       ) : (
-        products.map((producto) => <Item producto={producto} />)
+        products.map((producto) => (
+          <Item key={producto.id} producto={producto} />
+        ))
       )}
     </div>
   );

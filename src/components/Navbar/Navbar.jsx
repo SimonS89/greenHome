@@ -4,7 +4,7 @@ import Logo from "../../assets/img/GreenHome-logos_white.png";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
       <div className="container">
         <a className="navbar-brand" href="#">
           <img

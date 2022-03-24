@@ -1,10 +1,11 @@
 import React from "react";
+import ItemCounter from "../ItemCounter/ItemCounter";
 
 const ItemDetail = ({ productDetail }) => {
   const { id, title, price, pictureAlt, img, stock, detail } = productDetail;
 
   return (
-    <div className="container">
+    <div className="container mt-5 pt-5">
       <h2 className="text-center">
         Detalle del producto elegido: <i>{title}</i>
       </h2>
@@ -22,6 +23,7 @@ const ItemDetail = ({ productDetail }) => {
             </p>
             <p>{detail}</p>
           </div>
+          <ItemCounter initialValue={0} stock={stock} />
         </div>
       </div>
     </div>

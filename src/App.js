@@ -4,14 +4,17 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <ItemListContainer />
-      <ItemDetailContainer />
-    </div>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/detail" element={<ItemDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
