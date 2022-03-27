@@ -1,12 +1,13 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../assets/img/GreenHome-logos_white.png";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <NavLink to="/" className="navbar-brand">
           <img
             alt="Logo green home"
             src={Logo}
@@ -14,7 +15,7 @@ export const Navbar = () => {
             height="40"
             className="d-inline align-top"
           />
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -29,9 +30,9 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <NavLink to="/" className="nav-link active" aria-current="page">
                 <span>Home</span>
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
               <a className="nav-link active" href="#">
@@ -51,22 +52,22 @@ export const Navbar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink to="/category/indoor" className="dropdown-item">
                     Plantas de interior
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink to="/category/outdoor" className="dropdown-item">
                     Plantas de exterior
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink className="dropdown-item" to="/category/other">
                     Otros productos
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </li>
@@ -74,7 +75,9 @@ export const Navbar = () => {
           <li className="nav-Cart">
             <a href="#" className="nav-cart">
               <span>
-                <CartWidget />
+                <NavLink to="/cart">
+                  <CartWidget />
+                </NavLink>
               </span>
             </a>
           </li>

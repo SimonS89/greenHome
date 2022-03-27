@@ -6,13 +6,20 @@ import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import CartWidget from "./components/CartWidget/CartWidget.jsx";
+
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
-        <Route path="/detail" element={<ItemDetailContainer />} />
+
+        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+
+        <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
+
+        <Route path="/cart" element={<CartWidget />} />
       </Routes>
     </BrowserRouter>
   );
