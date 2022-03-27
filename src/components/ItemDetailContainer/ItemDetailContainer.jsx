@@ -8,17 +8,17 @@ const ItemDetailContainer = () => {
   const [productDetail, setProductDetail] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const detailId = useParams();
+  const { detailId } = useParams();
 
   useEffect(() => {
     setLoading(true);
     getFetch
-      .then((res) =>
-        setProductDetail(res.find((product) => product.id === "4"))
-      )
+      .then((res) => {
+        setProductDetail(res.find((product) => product.id === detailId));
+      })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [detailId]);
 
   return (
     <div className="mt-5 pt-5 d-flex justify-content-center">
