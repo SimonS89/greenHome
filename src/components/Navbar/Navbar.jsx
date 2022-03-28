@@ -35,14 +35,14 @@ export const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#!">
+              <a className="nav-link active" href="#">
                 <span>Quienes somos</span>
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link active dropdown-toggle"
-                href="#!"
+                href="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
