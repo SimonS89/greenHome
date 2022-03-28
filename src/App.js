@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Footer from "./components/Footer/Footer.jsx";
 import CartWidget from "./components/CartWidget/CartWidget.jsx";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
 
         <Route path="/cart" element={<CartWidget />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -5,8 +5,8 @@ import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5 p-3">
+      <div className="container ">
         <NavLink to="/" className="navbar-brand">
           <img
             alt="Logo green home"
@@ -35,14 +35,14 @@ export const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <a className="nav-link active" href="#!">
                 <span>Quienes somos</span>
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link active dropdown-toggle"
-                href="#"
+                href="#!"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"

@@ -20,8 +20,10 @@ const ItemDetailContainer = () => {
       .finally(() => setLoading(false));
   }, [detailId]);
 
+  console.log(detailId);
+
   return (
-    <div className="mt-5 pt-5 d-flex justify-content-center">
+    <div className="mt-5 pt-5 d-flex justify-content-center ">
       {loading ? (
         <Spinner animation="grow" role="status" size="lg">
           <span className="visually-hidden">Loading...</span>

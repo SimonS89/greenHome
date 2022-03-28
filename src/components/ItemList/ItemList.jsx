@@ -32,8 +32,10 @@ const ItemList = () => {
     }
   }, [categoryId]);
 
+  console.log(categoryId);
+
   return (
-    <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-center pb-5">
       {loading ? (
         <Spinner animation="grow" role="status" size="lg">
           <span className="visually-hidden">Loading...</span>
