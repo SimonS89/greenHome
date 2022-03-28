@@ -1,4 +1,5 @@
 import { products } from "../../assets/data/products";
+
 export const getFetch = new Promise(function (resolve, reject) {
   let condition = true;
   setTimeout(() => {
@@ -9,3 +10,4 @@ export const getFetch = new Promise(function (resolve, reject) {
     }
   }, 3700);
 });
+

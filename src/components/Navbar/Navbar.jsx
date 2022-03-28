@@ -73,13 +73,9 @@ export const Navbar = () => {
             </li>
           </ul>
           <li className="nav-Cart">
-            <a href="#" className="nav-cart">
-              <span>
-                <NavLink to="/cart">
-                  <CartWidget />
-                </NavLink>
-              </span>
-            </a>
+            <NavLink to="/cart" className="nav-cart">
+              <CartWidget />
+            </NavLink>
           </li>
         </div>
       </div>
