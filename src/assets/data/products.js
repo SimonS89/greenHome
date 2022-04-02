@@ -73,7 +73,7 @@ export const products = [
     img: "https://i.postimg.cc/5YR2KBzc/new-pot.jpg",
     stock: 1,
     detail:
-      "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
+      "Sobreviviré a la maceta divertida, la maceta linda divertida, el asesino de plantas, la planta de interior viva, el regalo de la planta de interior. Esta hermosa maceta hace un regalo divertido / sarcástico para alguien.",
     category: "other",
   },
   {
@@ -84,7 +84,7 @@ export const products = [
     img: "https://i.postimg.cc/8s75JY8T/recycled-pot.jpg",
     stock: 1,
     detail:
-      "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
+      "Sobreviviré a la maceta divertida, la maceta linda divertida, el asesino de plantas, la planta de interior viva, el regalo de la planta de interior. Esta hermosa maceta hace un regalo divertido / sarcástico para alguien.",
     category: "other",
   },
   {
@@ -95,7 +95,7 @@ export const products = [
     img: "https://i.postimg.cc/yd6S6vN8/Soil.jpg",
     stock: 1,
     detail:
-      "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
+      "Tierra negra rica en materia orgánica enriquecida con humus de lombriz y mejorada con fibra de coco para darle mayor aireación y bajar su peso respecto al volumen, mejora el drenaje y su la hace mas suelta. tierra negra 80% fibra de coco y/o cascara de arroz 10% humus solido 10%",
     category: "other",
   },
 ];
