@@ -65,4 +65,37 @@ export const products = [
       "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
     category: "outdoor",
   },
+  {
+    id: "7",
+    title: "Macetas nuevas",
+    price: 200,
+    pictureAlt: "Macetas nuevas",
+    img: "https://i.postimg.cc/5YR2KBzc/new-pot.jpg",
+    stock: 1,
+    detail:
+      "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
+    category: "other",
+  },
+  {
+    id: "8",
+    title: "Macetas recicladas",
+    price: 100,
+    pictureAlt: "Macetas recicladas",
+    img: "https://i.postimg.cc/8s75JY8T/recycled-pot.jpg",
+    stock: 1,
+    detail:
+      "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
+    category: "other",
+  },
+  {
+    id: "9",
+    title: "Tierra abonada para jardin",
+    price: 300,
+    pictureAlt: "Tierra abonada para jardin",
+    img: "https://i.postimg.cc/yd6S6vN8/Soil.jpg",
+    stock: 1,
+    detail:
+      "¿¿En serio existe LA PLANTA con piel de dragón?? WTF!!! Mira bien sus hojas, poca gente las ha visto en persona. La secreta Alocasia Dragon, solo para los más rápidos. Fácil de cuidar, pero mejor métele un candado, te la van a querer robar. Stock muy limitado en todo el mundo.",
+    category: "other",
+  },
 ];
