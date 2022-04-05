@@ -8,7 +8,7 @@ const ItemCounter = ({ cuantity, setCuantity, stock, onAdd }) => {
   };
 
   const handleLess = () => {
-    if (cuantity > 0) {
+    if (cuantity > 1) {
       setCuantity(cuantity - 1);
     }
   };
@@ -20,7 +20,7 @@ const ItemCounter = ({ cuantity, setCuantity, stock, onAdd }) => {
           type="button"
           className="btn btn-outline-dark fw-bolder btn-lg me-3"
           onClick={handleLess}
-          disabled={cuantity === 0 ? true : false}
+          disabled={cuantity === 1 ? true : false}
         >
           {" "}
           -{" "}

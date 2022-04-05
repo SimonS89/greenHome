@@ -11,7 +11,7 @@ const ItemDetail = ({ productDetail }) => {
     navigate(-1);
   };
 
-  const [cuantity, setCUantity] = useState(0);
+  const [cuantity, setCUantity] = useState(1);
   const [buttons, setButtons] = useState(false);
 
   const addCart = () => {
