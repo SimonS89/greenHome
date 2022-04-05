@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { DetailButtons } from "../DetailButtons/DetailButtons";
 
 const ItemDetail = ({ productDetail }) => {
   const { id, title, price, pictureAlt, img, stock, detail } = productDetail;
@@ -53,19 +54,7 @@ const ItemDetail = ({ productDetail }) => {
               onAdd={addCart}
             />
           ) : (
-            <div className="d-inline mb-3">
-              {" "}
-              <Link to="/cart">
-                <button className="btn btn-primary me-2 d-inline">
-                  Terminar compra
-                </button>
-              </Link>
-              <Link to="/">
-                <button className="btn btn-primary d-inline ms-2">
-                  Seguir comprando
-                </button>
-              </Link>
-            </div>
+            <DetailButtons />
           )}
 
           <div className="col">
