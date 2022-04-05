@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ItemDetail = ({ productDetail }) => {
   const { id, title, price, pictureAlt, img, stock, detail } = productDetail;
@@ -12,6 +12,8 @@ const ItemDetail = ({ productDetail }) => {
   };
 
   const [cuantity, setCUantity] = useState(0);
+  const [buttons, setButtons] = useState(false);
+
   const addCart = () => {
     const itemToAdd = {
       id,
@@ -20,7 +22,7 @@ const ItemDetail = ({ productDetail }) => {
       img,
       cuantity,
     };
-
+    setButtons(true);
     console.log(itemToAdd);
   };
 
@@ -43,12 +45,28 @@ const ItemDetail = ({ productDetail }) => {
             </p>
             <p>{detail}</p>
           </div>
-          <ItemCounter
-            cuantity={cuantity}
-            setCuantity={setCUantity}
-            stock={stock}
-            onAdd={addCart}
-          />
+          {!buttons ? (
+            <ItemCounter
+              cuantity={cuantity}
+              setCuantity={setCUantity}
+              stock={stock}
+              onAdd={addCart}
+            />
+          ) : (
+            <div className="d-inline mb-3">
+              {" "}
+              <Link to="/cart">
+                <button className="btn btn-primary me-2 d-inline">
+                  Terminar compra
+                </button>
+              </Link>
+              <Link to="/">
+                <button className="btn btn-primary d-inline ms-2">
+                  Seguir comprando
+                </button>
+              </Link>
+            </div>
+          )}
 
           <div className="col">
             <button
