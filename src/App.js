@@ -4,7 +4,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap/dist/css/bootstrap.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer/Footer.jsx";
 import CartWidget from "./components/CartWidget/CartWidget.jsx";
 
@@ -20,6 +20,8 @@ function App() {
         <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
 
         <Route path="/cart" element={<CartWidget />} />
+
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />
     </BrowserRouter>

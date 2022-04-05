@@ -20,8 +20,6 @@ const ItemDetailContainer = () => {
       .finally(() => setLoading(false));
   }, [detailId]);
 
-  console.log(detailId);
-
   return (
     <div className="mt-5 pt-5 d-flex justify-content-center ">
       {loading ? (

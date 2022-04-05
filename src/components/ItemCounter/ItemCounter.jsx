@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ItemCounter = ({ initialValue, stock }) => {
-  const [counter, setCounter] = useState(initialValue);
-
-  const sumar = () => {
-    if (counter < stock) {
-      setCounter(counter + 1);
+const ItemCounter = ({ cuantity, setCuantity, stock, onAdd }) => {
+  const handlePlus = () => {
+    if (cuantity < stock) {
+      setCuantity(cuantity + 1);
     }
   };
 
-  const restar = () => {
-    if (counter > 0) {
-      setCounter(counter - 1);
+  const handleLess = () => {
+    if (cuantity > 0) {
+      setCuantity(cuantity - 1);
     }
-  };
-
-  const onAdd = () => {
-    alert(`ud ha seleccionado ${counter} productos`);
   };
 
   return (
@@ -25,18 +19,18 @@ const ItemCounter = ({ initialValue, stock }) => {
         <button
           type="button"
           className="btn btn-outline-dark fw-bolder btn-lg me-3"
-          onClick={restar}
-          disabled={counter === 0 ? true : false}
+          onClick={handleLess}
+          disabled={cuantity === 0 ? true : false}
         >
           {" "}
           -{" "}
         </button>
-        <span>{counter}</span>
+        <span>{cuantity}</span>
         <button
           type="button"
           className="btn btn-outline-dark btn-lg ms-3"
-          onClick={sumar}
-          disabled={counter === stock ? true : false}
+          onClick={handlePlus}
+          disabled={cuantity === stock ? true : false}
         >
           {" "}
           +{" "}

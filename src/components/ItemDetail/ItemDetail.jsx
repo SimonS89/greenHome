@@ -1,11 +1,31 @@
-import React from "react";
+import { React, useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
+import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({ productDetail }) => {
   const { id, title, price, pictureAlt, img, stock, detail } = productDetail;
 
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate(-1);
+  };
+
+  const [cuantity, setCUantity] = useState(0);
+  const addCart = () => {
+    const itemToAdd = {
+      id,
+      title,
+      price,
+      img,
+      cuantity,
+    };
+
+    console.log(itemToAdd);
+  };
+
   return (
-    <div className="container mt-5 pt-5">
+    <div className="container mt-4">
       <h2 className="text-center">
         Detalle del producto elegido: <i>{title}</i>
       </h2>
@@ -23,7 +43,21 @@ const ItemDetail = ({ productDetail }) => {
             </p>
             <p>{detail}</p>
           </div>
-          <ItemCounter initialValue={0} stock={stock} />
+          <ItemCounter
+            cuantity={cuantity}
+            setCuantity={setCUantity}
+            stock={stock}
+            onAdd={addCart}
+          />
+
+          <div className="col">
+            <button
+              className="btn btn-outline-primary fw-bold btn-l"
+              onClick={handleNavigate}
+            >
+              Volver
+            </button>
+          </div>
         </div>
       </div>
     </div>
