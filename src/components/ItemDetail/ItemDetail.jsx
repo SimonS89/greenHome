@@ -29,7 +29,7 @@ const ItemDetail = ({ productDetail }) => {
 
   return (
     <div className="container mt-4">
-      <h3 className="text-center text-white">
+      <h3 className="text-center text-white mb-4">
         Detalle del producto elegido: <i>{title}</i>
       </h3>
       <div className="col-sm-4 offset-md-4" key={id}>
