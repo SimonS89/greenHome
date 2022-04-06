@@ -29,10 +29,10 @@ const ItemDetail = ({ productDetail }) => {
 
   return (
     <div className="container mt-4">
-      <h2 className="text-center">
+      <h3 className="text-center text-white">
         Detalle del producto elegido: <i>{title}</i>
-      </h2>
-      <div className="col-md-6 offset-md-3" key={id}>
+      </h3>
+      <div className="col-sm-4 offset-md-4" key={id}>
         <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded">
           <img src={img} className="card-img-top" alt={pictureAlt} />
           <div className="card-body">

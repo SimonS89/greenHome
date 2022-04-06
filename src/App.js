@@ -10,21 +10,29 @@ import CartWidget from "./components/CartWidget/CartWidget.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
+    <div
+      style={{
+        backgroundImage: "url(https://images4.alphacoders.com/932/932271.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
 
-        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
 
-        <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
+          <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
 
-        <Route path="/cart" element={<CartWidget />} />
+          <Route path="/cart" element={<CartWidget />} />
 
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 
