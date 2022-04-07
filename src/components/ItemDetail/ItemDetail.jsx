@@ -29,12 +29,12 @@ const ItemDetail = ({ productDetail }) => {
   };
 
   return (
-    <div className="container mt-1">
+    <div className="container mt-1 me-4 ms-4">
       <h3 className="text-center text-white mb-4">
         Detalle del producto elegido: <i>{title}</i>
       </h3>
       <div className="col-sm-4 offset-md-4" key={id}>
-        <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded">
+        <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded h-100">
           <img src={img} className="card-img-top" alt={pictureAlt} />
           <div className="card-body">
             <p className="card-text">
@@ -60,7 +60,7 @@ const ItemDetail = ({ productDetail }) => {
 
           <div className="col">
             <button
-              className="btn btn-primary fw-bold btn-l"
+              className="btn btn-primary fw-bolder btn-l"
               onClick={handleNavigate}
             >
               Volver

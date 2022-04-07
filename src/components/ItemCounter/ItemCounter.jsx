@@ -15,7 +15,7 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
 
   return (
     <div className="container mt-3 align-items-center">
-      <div className="col">
+      <div className="col col-sm">
         <button
           type="button"
           className="btn btn-outline-dark fw-bolder btn-lg me-3"
@@ -28,7 +28,7 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
         <span>{quantity}</span>
         <button
           type="button"
-          className="btn btn-outline-dark btn-lg ms-3"
+          className="btn btn-outline-dark btn-lg ms-3 fw-bolder"
           onClick={handlePlus}
           disabled={quantity === stock ? true : false}
         >
@@ -37,7 +37,10 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
         </button>
       </div>
       <div className="col">
-        <button className=" mt-2 mb-4  fw-bolder btn btn-dark" onClick={onAdd}>
+        <button
+          className=" mt-2 mb-4  fw-bolder btn btn-dark fw-bolder"
+          onClick={onAdd}
+        >
           Agregar al carrito
         </button>
       </div>
