@@ -8,5 +8,5 @@ export const getFetch = new Promise(function (resolve, reject) {
     } else {
       reject("no hay productos");
     }
-  }, 2000);
+  }, 1000);
 });

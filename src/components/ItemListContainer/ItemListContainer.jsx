@@ -27,7 +27,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div className="container pt-5 mt-5 text-center ">
+      <div className="container  mt-5 text-center ">
         {loading ? (
           <Spinner
             animation="grow"

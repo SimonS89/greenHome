@@ -1,11 +1,11 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Logo from "../../assets/img/GreenHome-logos_white.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5 p-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5 p-3 ">
       <div className="container ">
         <NavLink to="/" className="navbar-brand">
           <img
@@ -35,21 +35,21 @@ export const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link className="nav-link active" to="#">
                 <span>Quienes somos</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link active dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Nuestros productos
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <NavLink to="/category/indoor" className="dropdown-item">
@@ -72,11 +72,7 @@ export const Navbar = () => {
               </ul>
             </li>
           </ul>
-          <li className="nav-Cart">
-            <NavLink to="/cart" className="nav-cart">
-              <CartWidget />
-            </NavLink>
-          </li>
+          <CartWidget />
         </div>
       </div>
     </nav>

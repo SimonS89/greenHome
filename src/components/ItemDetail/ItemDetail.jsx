@@ -1,10 +1,13 @@
-import { React, useState } from "react";
+import { React, useContext, useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import { useNavigate } from "react-router-dom";
 import { DetailButtons } from "../DetailButtons/DetailButtons";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ productDetail }) => {
   const { id, title, price, pictureAlt, img, stock, detail } = productDetail;
+
+  const { cart, addToCart, isInCart } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -13,7 +16,6 @@ const ItemDetail = ({ productDetail }) => {
   };
 
   const [cuantity, setCUantity] = useState(1);
-  const [buttons, setButtons] = useState(false);
 
   const addCart = () => {
     const itemToAdd = {
@@ -23,12 +25,11 @@ const ItemDetail = ({ productDetail }) => {
       img,
       cuantity,
     };
-    setButtons(true);
-    console.log(itemToAdd);
+    addToCart(itemToAdd);
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-1">
       <h3 className="text-center text-white mb-4">
         Detalle del producto elegido: <i>{title}</i>
       </h3>
@@ -46,7 +47,7 @@ const ItemDetail = ({ productDetail }) => {
             </p>
             <p>{detail}</p>
           </div>
-          {!buttons ? (
+          {!isInCart(id) ? (
             <ItemCounter
               cuantity={cuantity}
               setCuantity={setCUantity}
