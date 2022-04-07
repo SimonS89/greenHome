@@ -1,15 +1,15 @@
 import React from "react";
 
-const ItemCounter = ({ cuantity, setCuantity, stock, onAdd }) => {
+const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
   const handlePlus = () => {
-    if (cuantity < stock) {
-      setCuantity(cuantity + 1);
+    if (quantity < stock) {
+      setQuantity(quantity + 1);
     }
   };
 
   const handleLess = () => {
-    if (cuantity > 1) {
-      setCuantity(cuantity - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     }
   };
 
@@ -20,17 +20,17 @@ const ItemCounter = ({ cuantity, setCuantity, stock, onAdd }) => {
           type="button"
           className="btn btn-outline-dark fw-bolder btn-lg me-3"
           onClick={handleLess}
-          disabled={cuantity === 1 ? true : false}
+          disabled={quantity === 1 ? true : false}
         >
           {" "}
           -{" "}
         </button>
-        <span>{cuantity}</span>
+        <span>{quantity}</span>
         <button
           type="button"
           className="btn btn-outline-dark btn-lg ms-3"
           onClick={handlePlus}
-          disabled={cuantity === stock ? true : false}
+          disabled={quantity === stock ? true : false}
         >
           {" "}
           +{" "}

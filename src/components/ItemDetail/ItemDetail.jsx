@@ -15,7 +15,7 @@ const ItemDetail = ({ productDetail }) => {
     navigate(-1);
   };
 
-  const [cuantity, setCUantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   const addCart = () => {
     const itemToAdd = {
@@ -23,7 +23,7 @@ const ItemDetail = ({ productDetail }) => {
       title,
       price,
       img,
-      cuantity,
+      quantity,
     };
     addToCart(itemToAdd);
   };
@@ -49,8 +49,8 @@ const ItemDetail = ({ productDetail }) => {
           </div>
           {!isInCart(id) ? (
             <ItemCounter
-              cuantity={cuantity}
-              setCuantity={setCUantity}
+              quantity={quantity}
+              setQuantity={setQuantity}
               stock={stock}
               onAdd={addCart}
             />

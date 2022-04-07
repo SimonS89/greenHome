@@ -6,27 +6,12 @@ import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer/Footer.jsx";
-import { CartContext } from "./context/CartContext";
-import { useState } from "react";
 import Cart from "./components/Cart/Cart";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (item) => {
-    setCart([...cart, item]);
-  };
-
-  const isInCart = (id) => {
-    return cart.some((prod) => prod.id === id);
-  };
-
-  const cartQuantity = () => {
-    return cart.length;
-  };
-
   return (
-    <CartContext.Provider value={{ cart, addToCart, isInCart, cartQuantity }}>
+    <CartProvider>
       <div
         style={{
           backgroundImage:
@@ -54,7 +39,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </div>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
