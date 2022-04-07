@@ -37,10 +37,7 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
         </button>
       </div>
       <div className="col">
-        <button
-          className=" mt-2 mb-4  fw-bolder btn btn-outline-dark"
-          onClick={onAdd}
-        >
+        <button className=" mt-2 mb-4  fw-bolder btn btn-dark" onClick={onAdd}>
           Agregar al carrito
         </button>
       </div>

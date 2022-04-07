@@ -60,7 +60,7 @@ const ItemDetail = ({ productDetail }) => {
 
           <div className="col">
             <button
-              className="btn btn-outline-primary fw-bold btn-l"
+              className="btn btn-primary fw-bold btn-l"
               onClick={handleNavigate}
             >
               Volver
