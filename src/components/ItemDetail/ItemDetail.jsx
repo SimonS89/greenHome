@@ -34,7 +34,7 @@ const ItemDetail = ({ productDetail }) => {
         Detalle del producto elegido: <i>{title}</i>
       </h3>
       <div className="col-sm-4 offset-md-4" key={id}>
-        <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded h-100">
+        <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded h-100 shadow-lg p-3 mb-5 bg-body rounded">
           <img src={img} className="card-img-top" alt={pictureAlt} />
           <div className="card-body">
             <p className="card-text">

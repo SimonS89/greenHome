@@ -25,6 +25,7 @@ const Cart = () => {
                 {" "}
                 Precio total por cantidad: $ {item.price * item.quantity}
               </span>
+              <hr />
               <button
                 className="btn btn-outline-danger border-0 fs-3"
                 onClick={() => removeItem(item.id)}
