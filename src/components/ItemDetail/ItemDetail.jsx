@@ -47,6 +47,7 @@ const ItemDetail = ({ productDetail }) => {
             </p>
             <p>{detail}</p>
           </div>
+
           {!isInCart(id) ? (
             <ItemCounter
               quantity={quantity}
