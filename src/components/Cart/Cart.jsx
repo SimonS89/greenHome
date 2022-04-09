@@ -3,47 +3,14 @@ import { CartContext } from "../../context/CartContext";
 import { BsFillTrashFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { EmptyCart } from "../EmptyCart/EmptyCart";
-import swal from "sweetalert";
 
 const Cart = () => {
-  const { cart, totalPrice, clearCart, removeItem } = useContext(CartContext);
+  const { cart, totalPrice, clearCart, removeItem, buy } =
+    useContext(CartContext);
 
   if (cart.length === 0) {
     return <EmptyCart />;
   }
-
-  const buy = () => {
-    swal({
-      title: "¿Realizar compra?",
-      text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
-      icon: "info",
-      buttons: ["Cancelar", "Confirmar"],
-    }).then((resp) => {
-      if (resp) {
-        swal({
-          title: "¡Compra realizada con éxito!",
-          icon: "success",
-        });
-      }
-    });
-  };
-
-  //   const erase = () => {
-  //     swal({
-  //       title: "¿Realizar compra?",
-  //       text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
-  //       icon: "info",
-  //       buttons: ["Cancelar", "Confirmar"],
-  //     }).then((resp) => {
-  //       if (resp) {
-  //         swal({
-  //           title: "¡Compra realizada con éxito!",
-  //           icon: "success",
-  //         });
-  //         return <EmptyCart />;
-  //       }
-  //     });
-  //   };
 
   return (
     <>
