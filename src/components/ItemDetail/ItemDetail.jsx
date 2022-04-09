@@ -3,11 +3,12 @@ import ItemCounter from "../ItemCounter/ItemCounter";
 import { useNavigate } from "react-router-dom";
 import { DetailButtons } from "../DetailButtons/DetailButtons";
 import { CartContext } from "../../context/CartContext";
+import { StocklessItem } from "../StocklessItem/StocklessItem";
 
 const ItemDetail = ({ productDetail }) => {
   const { id, title, price, pictureAlt, img, stock, detail } = productDetail;
 
-  const { cart, addToCart, isInCart } = useContext(CartContext);
+  const { addToCart, isInCart } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -25,8 +26,12 @@ const ItemDetail = ({ productDetail }) => {
       img,
       quantity,
     };
-    addToCart(itemToAdd);
+    quantity > 0 && addToCart(itemToAdd);
   };
+
+  if (stock < 1) {
+    return <StocklessItem productDetail={productDetail} />;
+  }
 
   return (
     <div className="container mt-1 me-4 ms-4">
@@ -34,18 +39,29 @@ const ItemDetail = ({ productDetail }) => {
         Detalle del producto elegido: <i>{title}</i>
       </h3>
       <div className="col-sm-4 offset-md-4" key={id}>
-        <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded h-100 shadow-lg p-3 mb-5 bg-body rounded">
-          <img src={img} className="card-img-top" alt={pictureAlt} />
-          <div className="card-body">
-            <p className="card-text">
+        <div className="card text-center text-dark bg-light border-light shadow-sm h-100 shadow-lg p-3 mb-5 bg-body rounded">
+          <img
+            src={img}
+            className="card-img-top img-thumbnail img-fluid"
+            alt={pictureAlt}
+          />
+          <div className="card-body card-text">
+            <p>{detail}</p>
+            <p className="card-text fs-5">
               <strong>
-                <i>
-                  El precio es de: $ {price} y tenemos en stock {stock}{" "}
-                  ejemplares.
-                </i>
+                <i>Precio: $ {price}</i>
               </strong>
             </p>
-            <p>{detail}</p>
+            <p className="card-text fs-5">
+              <strong>
+                <i>Stock disponible: {stock} </i>
+              </strong>
+            </p>
+            {stock <= 2 && (
+              <p className="text-danger fw-bold fs-5">
+                ¡Últimas unidades disponibles!
+              </p>
+            )}
           </div>
 
           {!isInCart(id) ? (
@@ -61,7 +77,7 @@ const ItemDetail = ({ productDetail }) => {
 
           <div className="col">
             <button
-              className="btn btn-primary fw-bolder btn-l"
+              className="btn btn-outline-primary fw-bolder btn-l"
               onClick={handleNavigate}
             >
               Volver

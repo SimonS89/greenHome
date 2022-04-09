@@ -71,7 +71,7 @@ export const products = [
     price: 200,
     pictureAlt: "Macetas nuevas",
     img: "https://i.postimg.cc/5YR2KBzc/new-pot.jpg",
-    stock: 1,
+    stock: 0,
     detail:
       "Sobreviviré a la maceta divertida, la maceta linda divertida, el asesino de plantas, la planta de interior viva, el regalo de la planta de interior. Esta hermosa maceta hace un regalo divertido / sarcástico para alguien.",
     category: "other",
@@ -82,7 +82,7 @@ export const products = [
     price: 100,
     pictureAlt: "Macetas recicladas",
     img: "https://i.postimg.cc/8s75JY8T/recycled-pot.jpg",
-    stock: 1,
+    stock: 7,
     detail:
       "Sobreviviré a la maceta divertida, la maceta linda divertida, el asesino de plantas, la planta de interior viva, el regalo de la planta de interior. Esta hermosa maceta hace un regalo divertido / sarcástico para alguien.",
     category: "other",
@@ -93,7 +93,7 @@ export const products = [
     price: 300,
     pictureAlt: "Tierra abonada para jardin",
     img: "https://i.postimg.cc/yd6S6vN8/Soil.jpg",
-    stock: 1,
+    stock: 36,
     detail:
       "Tierra negra rica en materia orgánica enriquecida con humus de lombriz y mejorada con fibra de coco para darle mayor aireación y bajar su peso respecto al volumen, mejora el drenaje y su la hace mas suelta. tierra negra 80% fibra de coco y/o cascara de arroz 10% humus solido 10%",
     category: "other",

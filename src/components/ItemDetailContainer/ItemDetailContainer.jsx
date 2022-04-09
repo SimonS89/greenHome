@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getFetch } from "../helpers/getFetch";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Spinner from "react-bootstrap/Spinner";
+import { Loader } from "../Loader/Loader";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
@@ -22,13 +22,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="mt-5 d-flex justify-content-center ">
-      {loading ? (
-        <Spinner animation="grow" role="status" size="lg">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      ) : (
-        <ItemDetail productDetail={productDetail} />
-      )}
+      {loading ? <Loader /> : <ItemDetail productDetail={productDetail} />}
     </div>
   );
 };

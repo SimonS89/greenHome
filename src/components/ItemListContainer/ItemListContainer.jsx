@@ -1,7 +1,7 @@
 import ItemList from "../ItemList/ItemList";
 import { getFetch } from "../helpers/getFetch";
 import { useEffect, useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
+import { Loader } from "../Loader/Loader";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
@@ -28,18 +28,7 @@ const ItemListContainer = () => {
   return (
     <>
       <div className="container  mt-5 text-center ">
-        {loading ? (
-          <Spinner
-            animation="grow"
-            role="status"
-            className="mt-5 mb-5 text-white"
-            size="lg"
-          >
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        ) : (
-          <ItemList products={products} />
-        )}
+        {loading ? <Loader /> : <ItemList products={products} />}
       </div>
     </>
   );

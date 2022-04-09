@@ -5,14 +5,19 @@ import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
   const { cartQuantity } = useContext(CartContext);
-  return (
-    <>
-      <Link to="/cart" className="fs-5">
-        <FaShoppingCart className="text-white fs-3" />
-      </Link>
-      <span className="ms-2 text-white fw-bold fs-4">{cartQuantity()}</span>
-    </>
-  );
+
+  if (cartQuantity() !== 0) {
+    return (
+      <>
+        <Link to="/cart" className="fs-5">
+          <FaShoppingCart className="text-white fs-3" />
+        </Link>
+        <span className="ms-2 text-white fw-bold fs-4">{cartQuantity()}</span>
+      </>
+    );
+  }
+
+  return "";
 };
 
 export default CartWidget;

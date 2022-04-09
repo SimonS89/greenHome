@@ -13,25 +13,35 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
     }
   };
 
+  const btnLessConfig = {
+    className: `btn
+            ${
+              quantity > 1
+                ? "btn-outline-dark fw-bolder btn-lg me-3"
+                : "btn-danger fw-bolder btn-lg me-3"
+            }`,
+    disabled: quantity === 1 ? true : false,
+  };
+
+  const btnPlusConfig = {
+    className: `btn
+            ${
+              quantity === stock
+                ? "btn-danger btn-lg ms-3 fw-bolder"
+                : "btn-outline-dark btn-lg ms-3 fw-bolder"
+            }`,
+    disabled: quantity === stock ? true : false,
+  };
+
   return (
-    <div className="container mt-3 align-items-center">
+    <div className="container align-items-center">
       <div className="col col-sm">
-        <button
-          type="button"
-          className="btn btn-outline-dark fw-bolder btn-lg me-3"
-          onClick={handleLess}
-          disabled={quantity === 1 ? true : false}
-        >
+        <button type="button" onClick={handleLess} {...btnLessConfig}>
           {" "}
           -{" "}
         </button>
         <span>{quantity}</span>
-        <button
-          type="button"
-          className="btn btn-outline-dark btn-lg ms-3 fw-bolder"
-          onClick={handlePlus}
-          disabled={quantity === stock ? true : false}
-        >
+        <button type="button" onClick={handlePlus} {...btnPlusConfig}>
           {" "}
           +{" "}
         </button>

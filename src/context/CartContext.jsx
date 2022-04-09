@@ -22,11 +22,19 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCart([]);
+    const clear = window.confirm("Se vaciara el carrito de compras.");
+    if (clear) {
+      setCart([]);
+    }
   };
 
   const removeItem = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
+    const remove = window.confirm(
+      "Estás seguro/a que querés remover este producto?"
+    );
+    if (remove) {
+      setCart(cart.filter((item) => item.id !== id));
+    }
   };
 
   return (
