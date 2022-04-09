@@ -8,7 +8,7 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
   };
 
   const handleLess = () => {
-    if (quantity > 1) {
+    if (quantity > 0) {
       setQuantity(quantity - 1);
     }
   };
@@ -16,11 +16,11 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
   const btnLessConfig = {
     className: `btn
             ${
-              quantity > 1
+              quantity > 0
                 ? "btn-outline-dark fw-bolder btn-lg me-3"
                 : "btn-danger fw-bolder btn-lg me-3"
             }`,
-    disabled: quantity === 1 ? true : false,
+    disabled: quantity === 0 ? true : false,
   };
 
   const btnPlusConfig = {
