@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { BsFillTrashFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { EmptyCart } from "../EmptyCart/EmptyCart";
+import swal from "sweetalert";
 
 const Cart = () => {
   const { cart, totalPrice, clearCart, removeItem } = useContext(CartContext);
@@ -10,6 +11,39 @@ const Cart = () => {
   if (cart.length === 0) {
     return <EmptyCart />;
   }
+
+  const buy = () => {
+    swal({
+      title: "¿Realizar compra?",
+      text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
+      icon: "info",
+      buttons: ["Cancelar", "Confirmar"],
+    }).then((resp) => {
+      if (resp) {
+        swal({
+          title: "¡Compra realizada con éxito!",
+          icon: "success",
+        });
+      }
+    });
+  };
+
+  //   const erase = () => {
+  //     swal({
+  //       title: "¿Realizar compra?",
+  //       text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
+  //       icon: "info",
+  //       buttons: ["Cancelar", "Confirmar"],
+  //     }).then((resp) => {
+  //       if (resp) {
+  //         swal({
+  //           title: "¡Compra realizada con éxito!",
+  //           icon: "success",
+  //         });
+  //         return <EmptyCart />;
+  //       }
+  //     });
+  //   };
 
   return (
     <>
@@ -42,6 +76,9 @@ const Cart = () => {
         </ul>{" "}
         <div className="mt-5 list-group-item pb-3 pt-3 fw-bold fs-4 border-dark text-dark mb-3">
           <h3> Subtotal: $ {totalPrice()}</h3>
+          <button onClick={() => buy()} className="btn btn-success">
+            Realizar compra
+          </button>
         </div>
         <button className="btn btn-danger" onClick={clearCart}>
           {" "}
