@@ -14,7 +14,10 @@ export const StocklessItem = ({ productDetail }) => {
         Detalle del producto elegido: <i>{title}</i>
       </h3>
       <div className="col-sm-4 offset-md-4" key={id}>
-        <div className="card text-center text-dark bg-light mb-3 border-light shadow-sm p-3 mb-5 bg-body rounded h-100 shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="card text-center text-dark bg-light border-light shadow-sm p-3 mb-5 bg-body rounded h-100 ">
+          {stock <= 0 && (
+            <p className="text-danger fw-bold fs-4">¡ Item sin stock !</p>
+          )}
           <img
             src={img}
             className="card-img-top img-thumbnail img-fluid"
@@ -32,9 +35,6 @@ export const StocklessItem = ({ productDetail }) => {
                 <i>Stock disponible: {stock} </i>
               </strong>
             </p>
-            {stock <= 2 && (
-              <p className="text-danger fw-bold fs-5">¡ Item sin stock !</p>
-            )}
           </div>
 
           <div className="col">
