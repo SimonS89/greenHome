@@ -1,7 +1,5 @@
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import "bootstrap/dist/js/bootstrap.min.js";
-import "bootstrap/dist/css/bootstrap.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -25,9 +23,8 @@ function App() {
       <div
         style={{
           backgroundImage:
-            "url(https://images4.alphacoders.com/932/932271.jpg)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+            "url(https://res.cloudinary.com/greenhome/image/upload/v1649601777/GreenHome/bg_ea1bxc.jpg)",
+          backgroundSize: "contain",
         }}
       >
         <BrowserRouter>

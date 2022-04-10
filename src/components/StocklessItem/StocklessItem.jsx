@@ -10,13 +10,16 @@ export const StocklessItem = ({ productDetail }) => {
 
   return (
     <div className="container mt-1 me-4 ms-4">
-      <h3 className="text-center text-white mb-4">
+      <h1 className="text-center text-dark bg-light mb-4">
         Detalle del producto elegido: <i>{title}</i>
-      </h3>
+      </h1>
       <div className="col-sm-4 offset-md-4" key={id}>
-        <div className="card text-center text-dark bg-light border-light shadow-sm p-3 mb-5 bg-body rounded h-100 ">
+        <div
+          className="card text-center text-white border-light shadow-sm h-100 shadow-lg p-3 mb-5 rounded"
+          style={{ backgroundColor: "#383A3F" }}
+        >
           {stock <= 0 && (
-            <p className="text-danger fw-bold fs-4">¡ Item sin stock !</p>
+            <p className="text-danger fw-bold fs-3">¡ Item sin stock !</p>
           )}
           <img
             src={img}

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
+  const [bgColour, setBgColour] = useState("#F6B352");
+
+  const btnStyle = { background: `${bgColour}` };
+
   const handlePlus = () => {
     if (quantity < stock) {
       setQuantity(quantity + 1);
@@ -17,7 +21,7 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
     className: `btn
             ${
               quantity > 0
-                ? "btn-outline-dark fw-bolder btn-lg me-3"
+                ? "btn-light fw-bolder btn-lg me-3"
                 : "btn-danger fw-bolder btn-lg me-3"
             }`,
     disabled: quantity === 0 ? true : false,
@@ -28,7 +32,7 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
             ${
               quantity === stock
                 ? "btn-danger btn-lg ms-3 fw-bolder"
-                : "btn-outline-dark btn-lg ms-3 fw-bolder"
+                : "btn-light btn-lg ms-3 fw-bolder"
             }`,
     disabled: quantity === stock ? true : false,
   };
@@ -50,6 +54,9 @@ const ItemCounter = ({ quantity, setQuantity, stock, onAdd }) => {
         <button
           className=" mt-2 mb-4  fw-bolder btn btn-dark fw-bolder"
           onClick={onAdd}
+          style={btnStyle}
+          onMouseEnter={() => setBgColour("#F68657")}
+          onMouseLeave={() => setBgColour("#F6B352")}
         >
           Agregar al carrito
         </button>

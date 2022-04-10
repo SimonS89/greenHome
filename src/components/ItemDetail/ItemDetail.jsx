@@ -16,7 +16,7 @@ const ItemDetail = ({ productDetail }) => {
     navigate(-1);
   };
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const addCart = () => {
     const itemToAdd = {
@@ -35,11 +35,14 @@ const ItemDetail = ({ productDetail }) => {
 
   return (
     <div className="container mt-1 me-4 ms-4">
-      <h3 className="text-center text-white mb-4">
+      <h1 className="text-center text-dark bg-light mb-4">
         Detalle del producto elegido: <i>{title}</i>
-      </h3>
+      </h1>
       <div className="col-sm-4 offset-md-4" key={id}>
-        <div className="card text-center text-dark bg-light border-light shadow-sm h-100 shadow-lg p-3 mb-5 bg-body rounded">
+        <div
+          className="card text-center text-white border-light shadow-sm h-100 shadow-lg p-3 mb-5 rounded"
+          style={{ backgroundColor: "#383A3F" }}
+        >
           <img
             src={img}
             className="card-img-top img-thumbnail img-fluid"
@@ -77,7 +80,7 @@ const ItemDetail = ({ productDetail }) => {
 
           <div className="col">
             <button
-              className="btn btn-outline-primary fw-bolder btn-l"
+              className="btn btn-light fw-bolder btn-l"
               onClick={handleNavigate}
             >
               Volver
