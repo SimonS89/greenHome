@@ -22,6 +22,23 @@ export const CartProvider = ({ children }) => {
     return cart.reduce((acc, item) => (acc += item.price * item.quantity), 0);
   };
 
+  const buy = () => {
+    swal({
+      title: "¿Realizar compra?",
+      text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
+      icon: "info",
+      buttons: ["Cancelar", "Confirmar"],
+    }).then((resp) => {
+      if (resp) {
+        setCart([]);
+        swal({
+          title: "¡Compra realizada con éxito!",
+          icon: "success",
+        });
+      }
+    });
+  };
+
   const clearCart = () => {
     swal({
       title: "¿Querés vaciar tu carrito de compras?",
@@ -66,6 +83,7 @@ export const CartProvider = ({ children }) => {
         totalPrice,
         clearCart,
         removeItem,
+        buy,
       }}
     >
       {children}
