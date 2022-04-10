@@ -15,7 +15,7 @@ const Cart = () => {
   return (
     <>
       <div
-        className="container  mt-5 text-center mb-5 pt-3 pb-3"
+        className="container  mt-5 text-center mb-5 pt-5 pb-5"
         style={{ backgroundColor: "#383A3F" }}
       >
         <h1 className="text-dark bg-white text-center mb-5">Tu compra</h1>
@@ -23,7 +23,7 @@ const Cart = () => {
           {cart.map((item) => (
             <li
               key={item.id}
-              className="list-group-item row y  pb-3 pt-3 fw-bold fs-4 border-dark"
+              className="list-group-item row pb-3 pt-3 fw-bold fs-4 border-dark"
             >
               {item.title}
               <span className="badge text-dark rounded-pill">
