@@ -51,7 +51,7 @@ const Cart = () => {
           {" "}
           Vaciar Carrito
         </button>
-        <Link to="/" className="btn btn-primary d-inline ms-2">
+        <Link to="/" className="btn btn-primary ms-2">
           Seguir comprando
         </Link>
       </div>
