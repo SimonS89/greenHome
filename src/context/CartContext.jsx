@@ -24,18 +24,10 @@ export const CartProvider = ({ children }) => {
 
   const buy = () => {
     swal({
-      title: "¿Realizar compra?",
-      text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
-      icon: "info",
-      buttons: ["Cancelar", "Confirmar"],
-    }).then((resp) => {
-      if (resp) {
-        setCart([]);
-        swal({
-          title: "¡Compra realizada con éxito!",
-          icon: "success",
-        });
-      }
+      title: "¡Compra realizada con éxito!",
+      icon: "success",
+    }).then(() => {
+      setCart([]);
     });
   };
 

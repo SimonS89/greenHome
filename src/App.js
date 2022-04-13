@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer/Footer.jsx";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
+import Checkout from "./components/Checkout/Checkout";
 // import { Info } from "./components/Info/Info";
 // import { products } from "./assets/data/products";
 // import db from "./firebase/config";
@@ -41,6 +42,8 @@ function App() {
             <Route path="/detail/:detailId" element={<ItemDetailContainer />} />
 
             <Route path="/cart" element={<Cart />} />
+
+            <Route path="/checkout" element={<Checkout />} />
 
             {/* <Route path="/info" element={<Info />} /> */}
 

@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import { EmptyCart } from "../EmptyCart/EmptyCart";
 
 const Cart = () => {
-  const { cart, totalPrice, clearCart, removeItem, buy } =
-    useContext(CartContext);
+  const { cart, totalPrice, clearCart, removeItem } = useContext(CartContext);
 
   if (cart.length === 0) {
     return <EmptyCart />;
@@ -46,9 +45,9 @@ const Cart = () => {
         </ul>{" "}
         <div className="mt-5 list-group-item pb-3 pt-3 fw-bold fs-4 border-dark text-dark mb-3">
           <h3> Subtotal: $ {totalPrice()}</h3>
-          <button onClick={() => buy()} className="btn btn-success">
-            Realizar compra
-          </button>
+          <Link to="/checkout" className="btn btn-success">
+            Comprar
+          </Link>
         </div>
         <button className="btn btn-danger" onClick={clearCart}>
           {" "}
