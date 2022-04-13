@@ -18,11 +18,11 @@ const Footer = () => (
             />
           </Link>
           <p className="pt-2">
-            La <strong>importancia de un vivero</strong> es, tener la
-            posibilidad de producir diferentes variedades de plantas
-            específicas, con la cantidad y la calidad necesaria para reforestar
-            cierta área determinada. … Diversificar la estructura productiva
-            local, favoreciendo el impulso de viveros de carácter innovador.
+            La <strong>importancia de un vivero</strong> es tener la posibilidad
+            de producir diferentes variedades de plantas específicas, con la
+            cantidad y la calidad necesaria para reforestar cierta área
+            determinada y diversificar la estructura productiva local,
+            favoreciendo así el impulso de viveros de carácter innovador.
           </p>
         </div>
 
