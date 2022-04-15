@@ -1,4 +1,11 @@
-import { addDoc, collection, Timestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  Timestamp,
+  doc,
+  updateDoc,
+  getDoc,
+} from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
@@ -38,6 +45,14 @@ const Checkout = () => {
     }).then((resp) => {
       if (resp) {
         const ordersRef = collection(db, "orders");
+        cart.forEach((item) => {
+          const docRef = doc(db, "products", item.id);
+          getDoc(docRef).then((doc) => {
+            updateDoc(docRef, {
+              stock: doc.data().stock - item.quantity,
+            });
+          });
+        });
         addDoc(ordersRef, order).then((doc) => {
           setOrderId(doc.id);
           buy();
