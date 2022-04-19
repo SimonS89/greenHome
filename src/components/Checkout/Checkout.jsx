@@ -19,6 +19,7 @@ const Checkout = () => {
   const { cart, totalPrice, buy } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -30,10 +31,10 @@ const Checkout = () => {
   const handleInputChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors(validateInfo(values));
+    setIsSubmitting(true);
     const order = {
       items: cart,
       total: totalPrice(),
@@ -67,18 +68,20 @@ const Checkout = () => {
       }
     });
 
-    if (outOfStock.length === 0) {
-      batch.commit();
-      addDoc(ordersRef, order).then((doc) => {
-        setOrderId(doc.id);
-        buy();
-      });
-    } else {
-      swal({
-        title: "Hay items sin stock",
-        text: "Items agotados durante su proceso de compra",
-        icon: "error",
-      });
+    if (isSubmitting && Object.keys(errors).length === 0) {
+      if (outOfStock.length === 0) {
+        batch.commit();
+        addDoc(ordersRef, order).then((doc) => {
+          setOrderId(doc.id);
+          buy();
+        });
+      } else {
+        swal({
+          title: "Hay items sin stock",
+          text: "Items agotados durante su proceso de compra",
+          icon: "error",
+        });
+      }
     }
   };
 
