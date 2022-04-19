@@ -1,5 +1,4 @@
 import ItemList from "../ItemList/ItemList";
-// import { getFetch } from "../helpers/getFetch";
 import { useEffect, useState } from "react";
 import { Loader } from "../Loader/Loader";
 import { useParams } from "react-router-dom";
@@ -34,18 +33,6 @@ const ItemListContainer = () => {
         console.log(err);
       })
       .finally(() => setLoading(false));
-    // getFetch
-    //   .then((resp) => {
-    //     if (categoryId) {
-    //       setProducts(resp.filter((item) => item.category === categoryId));
-    //     } else {
-    //       setProducts(resp);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   })
-    //   .finally(() => setLoading(false));
   }, [categoryId]);
 
   return (

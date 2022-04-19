@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCiz6ivOPhl9-TBoBIQc2k0dghVRngWJuA",
-  authDomain: "greenhome-2a113.firebaseapp.com",
-  projectId: "greenhome-2a113",
-  storageBucket: "greenhome-2a113.appspot.com",
-  messagingSenderId: "316214145381",
-  appId: "1:316214145381:web:625385ba2c42f9955db18c",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTH,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGE,
+  messagingSenderId: process.env.REACT_APP_MESSENGER,
+  appId: process.env.REACT_APP_APPID,
 };
 
 const app = initializeApp(firebaseConfig);

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { getFetch } from "../helpers/getFetch";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { Loader } from "../Loader/Loader";
 import { useParams } from "react-router-dom";
@@ -22,12 +21,6 @@ const ItemDetailContainer = () => {
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-    //     getFetch
-    //       .then((res) => {
-    //         setProductDetail(res.find((product) => product.id === detailId));
-    //       })
-    //       .catch((err) => console.log(err))
-    //       .finally(() => setLoading(false));
   }, [detailId]);
 
   return (

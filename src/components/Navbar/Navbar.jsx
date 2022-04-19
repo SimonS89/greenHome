@@ -35,9 +35,9 @@ export const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              {/* <NavLink className="nav-link active" to="/info">
+              <NavLink className="nav-link active" to="/info">
                 <span>Información Vivero</span>
-              </NavLink> */}
+              </NavLink>
             </li>
             <li className="nav-item dropdown">
               <Link

@@ -1,10 +1,12 @@
 import {
+  getDocs,
   addDoc,
   collection,
   Timestamp,
-  doc,
-  updateDoc,
-  getDoc,
+  writeBatch,
+  query,
+  where,
+  documentId,
 } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
@@ -29,7 +31,7 @@ const Checkout = () => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const order = {
       items: cart,
@@ -37,28 +39,46 @@ const Checkout = () => {
       buyer: { ...values },
       date: Timestamp.fromDate(new Date()),
     };
-    swal({
-      title: "¿Realizar compra?",
-      text: "¿Queres realizar la compra por $ " + totalPrice() + "?",
-      icon: "info",
-      buttons: ["Cancelar", "Confirmar"],
-    }).then((resp) => {
-      if (resp) {
-        const ordersRef = collection(db, "orders");
-        cart.forEach((item) => {
-          const docRef = doc(db, "products", item.id);
-          getDoc(docRef).then((doc) => {
-            updateDoc(docRef, {
-              stock: doc.data().stock - item.quantity,
-            });
-          });
+    const batch = writeBatch(db);
+    const ordersRef = collection(db, "orders");
+    const productsRef = collection(db, "products");
+    const q = query(
+      productsRef,
+      where(
+        documentId(),
+        "in",
+        cart.map((item) => item.id)
+      )
+    );
+    const products = await getDocs(q);
+
+    const outOfStock = [];
+
+    products.forEach((doc) => {
+      const itemInCart = cart.find((item) => item.id === doc.id);
+
+      if (doc.data().stock >= itemInCart.quantity) {
+        batch.update(doc.ref, {
+          stock: doc.data().stock - itemInCart.quantity,
         });
-        addDoc(ordersRef, order).then((doc) => {
-          setOrderId(doc.id);
-          buy();
-        });
+      } else {
+        outOfStock.push(itemInCart);
       }
     });
+
+    if (outOfStock.length === 0) {
+      batch.commit();
+      addDoc(ordersRef, order).then((doc) => {
+        setOrderId(doc.id);
+        buy();
+      });
+    } else {
+      swal({
+        title: "Hay items sin stock",
+        text: "Items agotados durante su proceso de compra",
+        icon: "error",
+      });
+    }
   };
 
   if (orderId) {

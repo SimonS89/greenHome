@@ -7,18 +7,9 @@ import Footer from "./components/Footer/Footer.jsx";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
 import Checkout from "./components/Checkout/Checkout";
-// import { Info } from "./components/Info/Info";
-// import { products } from "./assets/data/products";
-// import db from "./firebase/config";
-// import { addDoc, collection } from "firebase/firestore";
+import { Info } from "./components/Info/Info";
 
 function App() {
-  //   const uploadProducts = () => {
-  //     products.forEach(async (el) => {
-  //       await addDoc(collection(db, "products"), el);
-  //     });
-  //   };
-
   return (
     <CartProvider>
       <div
@@ -30,7 +21,6 @@ function App() {
       >
         <BrowserRouter>
           <Navbar />
-          {/* <button onClick={uploadProducts}>Subir productos</button> */}
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
 
@@ -45,7 +35,7 @@ function App() {
 
             <Route path="/checkout" element={<Checkout />} />
 
-            {/* <Route path="/info" element={<Info />} /> */}
+            <Route path="/info" element={<Info />} />
 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
