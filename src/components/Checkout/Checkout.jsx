@@ -13,12 +13,12 @@ import { Link, Navigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import db from "../../firebase/config";
 import swal from "sweetalert";
+import validateInfo from "../validateInfo/validateInfo";
 
 const Checkout = () => {
   const { cart, totalPrice, buy } = useContext(CartContext);
-
   const [orderId, setOrderId] = useState(null);
-
+  const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -33,6 +33,7 @@ const Checkout = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors(validateInfo(values));
     const order = {
       items: cart,
       total: totalPrice(),
@@ -105,38 +106,67 @@ const Checkout = () => {
       <hr />
 
       <form onSubmit={handleSubmit}>
-        <input
-          className="form-control my-2"
-          type={"text"}
-          placeholder="Nombre completo"
-          value={values.name}
-          name="name"
-          onChange={handleInputChange}
-        />
-        <input
-          className="form-control my-2"
-          type={"email"}
-          placeholder="Dirección de correo electrónico"
-          value={values.email}
-          name="email"
-          onChange={handleInputChange}
-        />
-        <input
-          className="form-control my-2"
-          type={"tel"}
-          placeholder="Teléfono celular"
-          value={values.tel}
-          name="tel"
-          onChange={handleInputChange}
-        />
-        <input
-          className="form-control my-2"
-          type={"text"}
-          placeholder="Domicilio"
-          value={values.address}
-          name="address"
-          onChange={handleInputChange}
-        />
+        <div className="text-start text-danger fw-bold bg-light">
+          {" "}
+          <input
+            className="form-control my-2"
+            type={"text"}
+            placeholder="Nombre completo"
+            value={values.name}
+            name="name"
+            onChange={handleInputChange}
+          />
+          {errors.name && <p>{errors.name}</p>}
+        </div>
+        <div className="text-start text-danger fw-bold bg-light">
+          {" "}
+          <input
+            className="form-control my-2"
+            type={"email"}
+            placeholder="Dirección de correo electrónico"
+            value={values.email}
+            name="email"
+            onChange={handleInputChange}
+          />
+          {errors.email && <p>{errors.email}</p>}
+        </div>
+        <div className="text-start text-danger fw-bold bg-light">
+          {" "}
+          <input
+            className="form-control my-2"
+            type={"email"}
+            placeholder="Ingrese nuevamente su dirección de correo electrónico"
+            value={values.email2}
+            name="email2"
+            onChange={handleInputChange}
+          />
+          {errors.email2 && <p>{errors.email2}</p>}
+        </div>
+        <div className="text-start text-danger fw-bold bg-light">
+          {" "}
+          <input
+            className="form-control my-2"
+            type={"tel"}
+            placeholder="Teléfono celular"
+            value={values.tel}
+            name="tel"
+            onChange={handleInputChange}
+          />
+          {errors.tel && <p>{errors.tel}</p>}
+        </div>
+        <div className="text-start text-danger fw-bold bg-light">
+          {" "}
+          <input
+            className="form-control my-2"
+            type={"text"}
+            placeholder="Domicilio"
+            value={values.address}
+            name="address"
+            onChange={handleInputChange}
+          />
+          {errors.address && <p>{errors.address}</p>}
+        </div>
+
         <textarea
           className="form-control my-2"
           type={"text"}
