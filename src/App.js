@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
 import Checkout from "./components/Checkout/Checkout";
-import { Info } from "./components/Info/Info";
+// import { Info } from "./components/Info/Info";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
 
             <Route path="/checkout" element={<Checkout />} />
 
-            <Route path="/info" element={<Info />} />
+            {/* <Route path="/info" element={<Info />} /> */}
 
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

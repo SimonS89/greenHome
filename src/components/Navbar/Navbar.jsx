@@ -34,11 +34,11 @@ export const Navbar = () => {
                 <span>Home</span>
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className="nav-link active" to="/info">
                 <span>Información Vivero</span>
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item dropdown">
               <Link
                 className="nav-link active dropdown-toggle"

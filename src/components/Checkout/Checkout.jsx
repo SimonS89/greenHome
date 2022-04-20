@@ -14,6 +14,7 @@ import { CartContext } from "../../context/CartContext";
 import db from "../../firebase/config";
 import swal from "sweetalert";
 import validateInfo from "../validateInfo/validateInfo";
+import "./styles.css";
 
 const Checkout = () => {
   const { cart, totalPrice, buy } = useContext(CartContext);
@@ -87,11 +88,18 @@ const Checkout = () => {
 
   if (orderId) {
     return (
-      <div className="container my-5 bg-light text-center">
-        <h2>¡ Tu orden se registró exitósamente!</h2>
-        <hr />
-        <h4>Tu número de seguimiento es : {orderId}</h4>
-        <Link className="btn btn-primary" to="/">
+      <div
+        className="container my-5 text-center pt-5 pb-5 "
+        style={{ backgroundColor: "#383A3F" }}
+      >
+        <h2 className="bg-light p-3 mb-5">
+          ¡ Tu orden se registró exitósamente!
+        </h2>
+        <hr className="text-light" />
+        <h4 className="bg-light p-3 mb-5 mt-5">
+          Tu número de seguimiento es : {orderId}
+        </h4>
+        <Link className="btn btn-primary fw-bold" to="/">
           {" "}
           Volver al inicio{" "}
         </Link>
@@ -104,15 +112,18 @@ const Checkout = () => {
   }
 
   return (
-    <div className="container my-5 text-center">
-      <h2 className="bg-light">Datos para su compra</h2>
+    <div
+      className="container my-5 text-center mb-5 pt-5 pb-5 mt-5"
+      style={{ backgroundColor: "#383A3F" }}
+    >
+      <h2 className="bg-light pb-2 pt-1">Datos para su compra</h2>
       <hr />
 
       <form onSubmit={handleSubmit}>
         <div className="text-start text-danger fw-bold bg-light">
           {" "}
           <input
-            className="form-control my-2"
+            className="form-control my-2 mb-3"
             type={"text"}
             placeholder="Nombre completo"
             value={values.name}
@@ -124,7 +135,7 @@ const Checkout = () => {
         <div className="text-start text-danger fw-bold bg-light">
           {" "}
           <input
-            className="form-control my-2"
+            className="form-control my-2 mb-3"
             type={"email"}
             placeholder="Dirección de correo electrónico"
             value={values.email}
@@ -136,7 +147,7 @@ const Checkout = () => {
         <div className="text-start text-danger fw-bold bg-light">
           {" "}
           <input
-            className="form-control my-2"
+            className="form-control my-2 mb-3"
             type={"email"}
             placeholder="Ingrese nuevamente su dirección de correo electrónico"
             value={values.email2}
@@ -148,7 +159,7 @@ const Checkout = () => {
         <div className="text-start text-danger fw-bold bg-light">
           {" "}
           <input
-            className="form-control my-2"
+            className="form-control my-2 mb-3"
             type={"tel"}
             placeholder="Teléfono celular"
             value={values.tel}
@@ -160,7 +171,7 @@ const Checkout = () => {
         <div className="text-start text-danger fw-bold bg-light">
           {" "}
           <input
-            className="form-control my-2"
+            className="form-control my-2 mb-3"
             type={"text"}
             placeholder="Domicilio"
             value={values.address}
@@ -171,14 +182,14 @@ const Checkout = () => {
         </div>
 
         <textarea
-          className="form-control my-2"
+          className="form-control my-2 mb-5"
           type={"text"}
           placeholder="Comentarios"
           value={values.comments}
           name="comments"
           onChange={handleInputChange}
         />
-        <button className="btn btn-primary" type="submit">
+        <button className="btn btn-primary fw-bold btn-lg" type="submit">
           Enviar
         </button>
       </form>
