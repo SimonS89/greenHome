@@ -8,7 +8,7 @@ export const Loader = () => {
         <Spinner
           animation="grow"
           role="status"
-          className="mt-5 mb-5 text-dark"
+          className="mt-5 mb-5 text-dark text-center"
           size="lg"
         >
           <span className="visually-hidden">Loading...</span>
