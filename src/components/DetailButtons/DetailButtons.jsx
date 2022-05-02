@@ -6,11 +6,11 @@ export const DetailButtons = () => {
       {" "}
       <Link
         to="/cart"
-        className="btn btn-primary btn-lg d-inline fw-bolder m-2"
+        className="btn btn-primary d-inline fw-bolder m-2"
       >
         Terminar compra
       </Link>
-      <Link to="/" className="btn btn-primary btn-lg  d-inline fw-bolder m-2">
+      <Link to="/" className="btn btn-primary d-inline fw-bolder m-2">
         Seguir comprando
       </Link>
     </div>
