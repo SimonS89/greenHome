@@ -34,6 +34,7 @@ const Checkout = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setErrors(validateInfo(values));
     setIsSubmitting(true);
     const order = {

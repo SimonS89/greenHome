@@ -10,7 +10,7 @@ export const DetailButtons = () => {
       >
         Terminar compra
       </Link>
-      <Link to="/" className="btn btn-primary d-inline fw-bolder m-2">
+      <Link to="/" className="btn btn-primary btn-lg  d-inline fw-bolder m-2">
         Seguir comprando
       </Link>
     </div>
